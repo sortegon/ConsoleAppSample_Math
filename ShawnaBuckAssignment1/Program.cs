@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace ShawnaBuckAssignment1
 {
@@ -110,6 +111,7 @@ namespace ShawnaBuckAssignment1
         {
             try
             {
+                /*What if user enters 0 or negative number?'*/
                 double seriesSum = 1.0/2;
                 double sign = -1;
                 for (double top = 2; top <= n; top++)
@@ -143,7 +145,17 @@ namespace ShawnaBuckAssignment1
         {
             try
             {
-                // Write your code here
+                /*TODO: add code to handle 0 and negative numbers*/
+                string binString = "";
+                while (n > 0)
+                {
+                    var r = n % 2;
+                    n = n / 2;
+                    binString=r+binString;
+                }
+
+                return long.Parse(binString);
+
             }
             catch
             {
