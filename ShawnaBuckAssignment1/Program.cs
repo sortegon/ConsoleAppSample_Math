@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
 namespace ShawnaBuckAssignment1
@@ -228,7 +229,30 @@ namespace ShawnaBuckAssignment1
         {
             try
             {
-                // Write your code here
+                int max = 0;
+                foreach (int number in a)
+                {
+                    if (number>max)
+                    {
+                        max = number;
+                    }
+                }
+                int[] frequency = new int[max];
+                foreach (int numbers in a)
+                {
+                    frequency[numbers - 1]++;
+                }
+                Console.WriteLine( "Number\tFrequency");
+                for (int i = 0; i < max; i++)
+                {
+                    if (frequency[i]>0)
+                    {
+                        Console.Write(i+1);
+                        Console.Write("\t");
+                        Console.Write(frequency[i]);
+                        Console.WriteLine();
+                    }
+                }
             }
             catch
             {
