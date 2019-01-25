@@ -167,9 +167,18 @@ namespace ShawnaBuckAssignment1
 
         public static long binaryToDecimal(long n)
         {
+
             try
             {
-                // Write your code here
+                string binString = n.ToString();
+                int len = binString.Length - 1;
+                int dec = 0;
+                for (int x = 0; x <= len; x++)
+                {
+                    dec += int.Parse(binString[x].ToString()) * Power(len-x);
+                }
+
+                return dec;
             }
             catch
             {
@@ -179,11 +188,35 @@ namespace ShawnaBuckAssignment1
             return 0;
         }
 
+        public static int Power(int i)
+        {
+            int q = 1;
+            for (; i > 0; i--)
+            {
+                q *= 2;
+            }
+
+            return q;
+        }
+
         public static void printTriangle(int n)
         {
             try
             {
-                // Write your code here
+                for (int i = 1; i <= n; i++)
+                {
+                    int printStars = (i * 2) - 1;
+                    int nonStars = n - i;
+                    for (int j=1; j <= nonStars; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int k=1; k <= printStars; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
             }
             catch
             {
